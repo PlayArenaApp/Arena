@@ -25,7 +25,7 @@ Arena is a Web3 betting platform where players wager SOL on head-to-head battles
 
 <div align="center">
   <br />
-  <img src="assets/screenshot.png" alt="Arena Gameplay" width="620" />
+  <img src="assets/play_arena1.png" alt="Arena Gameplay" width="620" />
   <br />
 </div>
 
