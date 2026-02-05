@@ -48,7 +48,7 @@ Arena is a Web3 betting platform where players wager SOL on head-to-head battles
   </tr>
   <tr>
     <td><strong>Multi-Wallet Support</strong></td>
-    <td>Phantom, Trust, MetaMask, Solflare, Coinbase Wallet, Ledger, Torus</td>
+    <td>Phantom, Solflare, Coinbase Wallet, Ledger, Torus</td>
   </tr>
   <tr>
     <td><strong>Real-Time Experience</strong></td>

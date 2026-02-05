@@ -23,8 +23,6 @@
 |:--|:--|:--|
 | Phantom | Browser / Mobile | [phantom.app](https://phantom.app) |
 | Solflare | Browser / Mobile | [solflare.com](https://solflare.com) |
-| Trust | Browser / Mobile | [trustwallet.com](https://trustwallet.com) |
-| MetaMask | Browser / Mobile | [metamask.io](https://metamask.io) |
 | Coinbase Wallet | Browser / Mobile | [coinbase.com/wallet](https://www.coinbase.com/wallet) |
 | Ledger | Hardware | [ledger.com](https://www.ledger.com) |
 | Torus | Social Login | [tor.us](https://tor.us) |

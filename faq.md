@@ -24,8 +24,6 @@ Arena is built on Solana with transparent, verifiable mechanics. All transaction
 |:--|:--|
 | Phantom | Browser / Mobile |
 | Solflare | Browser / Mobile |
-| Trust | Browser / Mobile |
-| MetaMask | Browser / Mobile |
 | Coinbase Wallet | Browser / Mobile |
 | Ledger | Hardware |
 | Torus | Social Login |
