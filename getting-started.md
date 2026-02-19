@@ -122,7 +122,7 @@ Arena has automatic protections that may cancel a round:
 
 | Condition | Trigger | Result |
 |:--|:--|:--|
-| One-Sided Timeout | 10 min with bets on only one side | Full refund |
+| One-Sided Timeout | 5 min with bets on only one side | Full refund |
 | Lopsided Odds | Either side's odds drop to 1.1x or below | Full refund |
 
 > All bets are fully refunded with no fees.

@@ -38,7 +38,7 @@ Each fighter is randomly selected from a roster of **70+ unique characters** rep
 - New round created with two random fighters
 - Round waits for bets on **both sides**
 - Timer doesn't start until both Purple and Green have at least one bet
-- If 10 minutes pass with bets on only one side, round is cancelled
+- If 5 minutes pass with bets on only one side, round is cancelled
 
 ### Active (3 minutes)
 
@@ -96,14 +96,14 @@ Arena uses **Switchboard VRF** (Verifiable Random Function) for provably fair ou
 
 Arena automatically protects players from unfair situations. When a no-contest is triggered, **all bets are fully refunded**.
 
-### One-Sided Timeout (10 Minutes)
+### One-Sided Timeout (5 Minutes)
 
-If only one side has bets and no opposing bets are placed within 10 minutes, the round is cancelled.
+If only one side has bets and no opposing bets are placed within 5 minutes, the round is cancelled.
 
 | | |
 |:--|:--|
 | **Why** | Prevents players from having funds locked indefinitely |
-| **Trigger** | 10 minutes pass with bets on only one side |
+| **Trigger** | 5 minutes pass with bets on only one side |
 | **Result** | All bets refunded in full |
 
 ### Lopsided Odds Protection (1.1x Threshold)
@@ -218,7 +218,7 @@ Betting closes **10 seconds** before the round ends to:
 
 ## Real-Time Features
 
-Arena uses **WebSocket connections** for live updates:
+Arena delivers live updates throughout every round:
 
 | | |
 |:--|:--|

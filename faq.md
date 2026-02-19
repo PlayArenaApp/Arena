@@ -77,7 +77,7 @@ Betting closes 10 seconds before the round ends to prevent last-second manipulat
 
 ### What happens if I'm the only bettor?
 
-The round won't start until both sides have at least one bet. If no one bets on the other side within 10 minutes, your bet is refunded.
+The round won't start until both sides have at least one bet. If no one bets on the other side within 5 minutes, your bet is refunded.
 
 ### Can I cancel my bet?
 
@@ -93,7 +93,7 @@ A no-contest is when a round is cancelled and all bets are fully refunded. This 
 
 | Condition | Trigger |
 |:--|:--|
-| **One-sided timeout** | Only one side has bets for 10 minutes |
+| **One-sided timeout** | Only one side has bets for 5 minutes |
 | **Lopsided odds** | Either side's odds drop to 1.1x or below |
 
 ### Why was my round cancelled due to "lopsided odds"?

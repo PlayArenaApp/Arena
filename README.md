@@ -52,7 +52,7 @@ Arena is a Web3 betting platform where players wager SOL on head-to-head battles
   </tr>
   <tr>
     <td><strong>Real-Time Experience</strong></td>
-    <td>WebSocket-powered live updates for bets, chat, and battle state</td>
+    <td>Live updates for bets, chat, and battle state</td>
   </tr>
 </table>
 
