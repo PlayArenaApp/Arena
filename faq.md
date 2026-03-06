@@ -144,11 +144,11 @@ You don't need to claim manually. Winnings are **automatically sent** to your wa
 
 ### How are winnings calculated?
 
-Winners split 90% of the losing pool proportionally based on their bet size:
+After 1% goes to the Daily Jackpot, winners split 90% of the remaining losing pool proportionally based on their bet size:
 
 | | |
 |:--|:--|
-| **Formula** | Your Winnings = (Your Bet ÷ Total Winning Pool) × (Losing Pool × 0.90) |
+| **Formula** | Your Winnings = (Your Bet ÷ Total Winning Pool) × (Remaining Losing Pool × 0.90) |
 
 ### Do I get my original bet back?
 
@@ -235,6 +235,30 @@ The Provably Fair page shows buyback (Swap) and burn transactions for every roun
 ### Do I need REN to play?
 
 No. Arena only uses SOL for betting. REN is not required to play.
+
+---
+
+## Daily Jackpot
+
+### What is the Daily Jackpot?
+
+Arena runs a 24-hour jackpot cycle. 1% of each round's losing pool is contributed to the jackpot. At the end of each cycle, a random participant wins the entire pot.
+
+### How do I enter the jackpot?
+
+You're automatically entered when you place a bet during an active jackpot cycle. Every round you participate in counts as an entry.
+
+### How is the jackpot winner selected?
+
+The winner is selected using the same Switchboard VRF randomness used for round outcomes — provably fair and verifiable on-chain.
+
+### Where can I see the current jackpot?
+
+The jackpot amount and countdown timer are displayed in the Arena header when a cycle is active.
+
+### Can I verify the jackpot payout?
+
+Yes. Each jackpot cycle uses a dedicated on-chain wallet. All contributions and the winner payout have verifiable transaction signatures on Solscan.
 
 ---
 

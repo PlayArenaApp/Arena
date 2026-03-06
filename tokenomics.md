@@ -10,19 +10,21 @@
 
 ## Fee Distribution
 
-When a round ends, the **losing pool** is distributed as follows:
+When a round ends, **1% of the losing pool** is first allocated to the [Daily Jackpot](how-it-works.md#daily-jackpot). The remaining 99% is distributed as follows:
 
 | Recipient | Share | Description |
 |:--|:--:|:--|
-| Winners | 90% | Distributed proportionally to winning bettors |
-| Buyback & Burn | 8% | Used to buy REN tokens and permanently burn them |
-| Platform | 2% | Platform fee for operations and development |
+| Daily Jackpot | 1% | Funds the 24-hour jackpot prize pool (taken first) |
+| Winners | ~89% | 90% of remaining pool, distributed proportionally to winning bettors |
+| Buyback & Burn | ~8% | 8% of remaining pool, used to buy REN tokens and permanently burn them |
+| Platform | ~2% | 2% of remaining pool, platform fee for operations and development |
 
 | | |
 |:--|:--|
 | **Original Bet** | Winners always get their original bet back plus their share of the losing pool |
 | **Fee Source** | Fees are only taken from the losing pool, never from the winning pool |
 | **No-Contest** | If a round is cancelled, all bets are refunded with no fees |
+| **Jackpot** | Jackpot contribution is taken before the 90/8/2 split |
 
 ---
 
@@ -85,9 +87,10 @@ Every burn transaction can be verified on the [Provably Fair](provably-fair.md) 
 
 | Recipient | Calculation | Amount |
 |:--|:--|:--|
-| Winners | 12 × 0.90 | 10.8 SOL |
-| REN Buyback | 12 × 0.08 | 0.96 SOL |
-| Platform | 12 × 0.02 | 0.24 SOL |
+| Daily Jackpot | 12 × 0.01 | 0.12 SOL |
+| Winners | 11.88 × 0.90 | 10.692 SOL |
+| REN Buyback | 11.88 × 0.08 | 0.9504 SOL |
+| Platform | 11.88 × 0.02 | 0.2376 SOL |
 
 **Purple Bettor Winnings:**
 
@@ -96,8 +99,25 @@ If you bet **2 SOL** on Purple (25% of Purple pool):
 | | |
 |:--|:--|
 | **Original bet returned** | 2 SOL |
-| **Winnings share** | 10.8 × 0.25 = 2.7 SOL |
-| **Total received** | 4.7 SOL |
+| **Winnings share** | 10.692 × 0.25 = 2.673 SOL |
+| **Total received** | 4.673 SOL |
+
+---
+
+## Daily Jackpot
+
+In addition to the buyback and burn mechanism, Arena runs a **24-hour jackpot cycle** funded by 1% of each round's losing pool.
+
+| | |
+|:--|:--|
+| **Contribution** | 1% of the losing pool, taken before the 90/8/2 split |
+| **Cycle Duration** | 24 hours |
+| **Winner Selection** | VRF-based random draw from all participants |
+| **Payout** | Entire jackpot balance sent to the winner |
+
+Each cycle uses a dedicated on-chain wallet. All contributions and the winner payout are verifiable on Solscan.
+
+> See [How It Works — Daily Jackpot](how-it-works.md#daily-jackpot) for full details.
 
 ---
 

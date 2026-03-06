@@ -131,7 +131,7 @@ If either side's odds are at or below 1.1x when the battle timer expires, the ro
 
 ## Payout Calculation
 
-Winners split **90% of the losing pool** proportionally based on their bet size.
+First, **1% of the losing pool** goes to the [Daily Jackpot](#daily-jackpot). Winners then split **90% of the remaining pool** proportionally based on their bet size.
 
 ### Example
 
@@ -147,16 +147,17 @@ Distribution of the losing pool (5 SOL):
 
 | Recipient | Calculation | Amount |
 |:--|:--|:--|
-| Winners | 5 × 0.90 | 4.5 SOL |
-| REN Buyback | 5 × 0.08 | 0.4 SOL |
-| Platform | 5 × 0.02 | 0.1 SOL |
+| Daily Jackpot | 5 × 0.01 | 0.05 SOL |
+| Winners | 4.95 × 0.90 | 4.455 SOL |
+| REN Buyback | 4.95 × 0.08 | 0.396 SOL |
+| Platform | 4.95 × 0.02 | 0.099 SOL |
 
 If you bet **4 SOL** on Purple (40% of Purple pool):
 
 | | |
 |:--|:--|
-| **Your share** | 4.5 × 0.40 = 1.8 SOL profit |
-| **You receive** | 4 + 1.8 = 5.8 SOL total |
+| **Your share** | 4.455 × 0.40 = 1.782 SOL profit |
+| **You receive** | 4 + 1.782 = 5.782 SOL total |
 
 ---
 
@@ -227,6 +228,37 @@ Arena delivers live updates throughout every round:
 | **Round state** | Immediate notifications when rounds start/end |
 | **Chat messages** | Instant delivery of chat messages |
 | **Winner announcements** | Celebration animations when rounds settle |
+| **Jackpot updates** | Live jackpot amount and winner notifications |
+
+---
+
+## Daily Jackpot
+
+Every round contributes to a **24-hour jackpot prize pool**. At the end of each cycle, one lucky participant wins the entire pot.
+
+### How It Works
+
+| | |
+|:--|:--|
+| **Contribution** | 1% of each round's losing pool is transferred to the jackpot wallet |
+| **Cycle** | 24-hour cycles |
+| **Winner Selection** | Random participant drawn via Switchboard VRF |
+| **Payout** | Full jackpot balance sent directly to the winner's wallet |
+
+### Eligibility
+
+Any wallet that places a bet during the active jackpot cycle is automatically entered. The more rounds you participate in, the more entries you have.
+
+### Transparency
+
+| | |
+|:--|:--|
+| **Per-Cycle Wallet** | Each 24-hour cycle uses its own dedicated wallet |
+| **On-Chain Deposits** | Every contribution has a verifiable transaction signature |
+| **VRF Drawing** | Winner selected by the same provably fair randomness used for rounds |
+| **Verifiable Payout** | Winner payout transaction is publicly viewable on-chain |
+
+> The jackpot amount and countdown timer are displayed in the Arena header.
 
 ---
 

@@ -47,6 +47,10 @@ Arena is a Web3 betting platform where players wager SOL on head-to-head battles
     <td>8% of losing pools used for REN token buyback and burn</td>
   </tr>
   <tr>
+    <td><strong>Daily Jackpot</strong></td>
+    <td>1% of each round funds a 24-hour jackpot with VRF-drawn winner</td>
+  </tr>
+  <tr>
     <td><strong>Multi-Wallet Support</strong></td>
     <td>Phantom, Solflare, Coinbase Wallet, Ledger, Torus</td>
   </tr>
@@ -90,7 +94,7 @@ Arena is a Web3 betting platform where players wager SOL on head-to-head battles
 
 ## Fee Structure
 
-When a round concludes, the losing pool is distributed:
+When a round concludes, **1% of the losing pool** goes to the [Daily Jackpot](how-it-works.md#daily-jackpot). The remaining 99% is distributed:
 
 | Recipient | Allocation | Description |
 |:--|:--:|:--|
