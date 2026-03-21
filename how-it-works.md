@@ -262,6 +262,50 @@ Any wallet that places a bet during the active jackpot cycle is automatically en
 
 ---
 
+## Leaderboards
+
+Arena tracks player performance across multiple categories and time periods.
+
+### Ranking Categories
+
+| Category | Description |
+|:--|:--|
+| **Volume** | Total SOL wagered |
+| **Profit** | Net SOL earnings |
+| **Streak** | Current consecutive wins |
+| **Biggest Win** | Largest single-round win |
+
+### Time Periods
+
+| Period | Description |
+|:--|:--|
+| Daily | Resets every 24 hours |
+| Weekly | Resets every 7 days |
+| Monthly | Resets every 30 days |
+| All Time | Cumulative since launch |
+
+> Top 20 players are shown in each category. Rankings update automatically.
+
+---
+
+## Player Profiles
+
+Players can optionally create a profile to personalize their Arena experience.
+
+### Profile Features
+
+| | |
+|:--|:--|
+| **Display Name** | 3–20 characters (alphanumeric + underscore) |
+| **Avatar** | Choose from available avatars |
+| **Stats** | Total bets, win rate, total wagered, total won |
+| **Bet History** | View your latest bets with side, amount, and winnings |
+| **Win Streak** | Current consecutive wins displayed on leaderboards |
+
+> Profiles are optional. You can bet without creating one — your truncated wallet address will be shown instead.
+
+---
+
 ## Chat System
 
 During active rounds, players can chat:

@@ -262,6 +262,35 @@ Yes. Each jackpot cycle uses a dedicated on-chain wallet. All contributions and 
 
 ---
 
+## Leaderboards & Profiles
+
+### What are the leaderboards?
+
+Arena tracks player rankings across four categories: **Volume** (total SOL wagered), **Profit** (net earnings), **Streak** (consecutive wins), and **Biggest Win** (largest single win). Each can be filtered by Daily, Weekly, Monthly, or All Time.
+
+### How do I create a profile?
+
+Connect your wallet and click your wallet address in the header to access your profile. From there you can set a display name and choose an avatar.
+
+### Do I need a profile to play?
+
+No. Profiles are optional. Without one, your truncated wallet address is shown on leaderboards and in chat.
+
+### What stats does my profile track?
+
+| Stat | Description |
+|:--|:--|
+| Total Bets | Number of bets placed |
+| Win Rate | Percentage of rounds won |
+| Total Wagered | Total SOL bet across all rounds |
+| Total Won | Total SOL received from winnings |
+
+### Can I see my bet history?
+
+Yes. Your profile page shows your latest bets with the side you chose, amount wagered, and winnings.
+
+---
+
 ## Treasury & Wallet Connections
 
 ### Why does Bubble Maps show all player wallets connected?
