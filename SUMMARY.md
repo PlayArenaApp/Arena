@@ -11,6 +11,9 @@
 ## Game Mechanics
 
 * [How It Works](how-it-works.md)
+  * [Daily Jackpot](how-it-works.md#daily-jackpot)
+  * [Leaderboards](how-it-works.md#leaderboards)
+  * [Player Profiles](how-it-works.md#player-profiles)
 * [Tokenomics](tokenomics.md)
 
 ## Transparency
