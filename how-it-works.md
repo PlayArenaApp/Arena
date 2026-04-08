@@ -17,7 +17,7 @@ Two fighters face off in each round:
 | **Purple Fighter** | Left side |
 | **Green Fighter** | Right side |
 
-Each fighter is randomly selected from a roster of **70+ unique characters** representing fighters from around the world. Fighters track their win/loss records over time.
+Each fighter is randomly selected from a roster of **70 unique characters** representing fighters from around the world. Fighters track their win/loss records over time.
 
 ---
 
@@ -38,9 +38,9 @@ Each fighter is randomly selected from a roster of **70+ unique characters** rep
 - New round created with two random fighters
 - Round waits for bets on **both sides**
 - Timer doesn't start until both Purple and Green have at least one bet
-- If 5 minutes pass with bets on only one side, round is cancelled
+- If 2 minutes pass with bets on only one side, round is cancelled
 
-### Active (3 minutes)
+### Active (90 seconds)
 
 - Triggered automatically when both sides have bets
 - Players can continue placing bets
@@ -53,16 +53,30 @@ Each fighter is randomly selected from a roster of **70+ unique characters** rep
 - Round timer has ended
 - Odds check: if either side's odds are 1.1x or below, round is cancelled
 - Otherwise, winner is determined using VRF
-- Payouts processed automatically
+- Fight video plays while payouts are processed in parallel
 - Results displayed with winner announcement
 
 ### Settlement
 
-- All bets finalized
-- Winners receive SOL automatically
-- REN buyback and burn executed (8% of losing pool)
-- Round data archived for transparency
+- Winners paid directly from the on-chain vault
+- Remaining vault balance swept to platform treasury
+- Daily jackpot share contributed (1% of total pot)
+- Referral rewards distributed
+- Buyback and burn executed
 - New round begins
+
+---
+
+## On-Chain Vaults
+
+Every bet is held in a **per-round vault** owned by Arena's Solana program. Funds do not sit in a custodial wallet during active rounds.
+
+| | |
+|:--|:--|
+| **Trustless Custody** | Vaults are program-derived addresses (PDAs) — no human signs to move funds during a round |
+| **Direct Payouts** | Winners receive SOL directly from the vault |
+| **Verifiable** | Vault address, deposits, and payouts are all publicly viewable on Solscan |
+| **Round-Scoped** | Each round has its own vault — funds are never pooled across rounds |
 
 ---
 
@@ -96,14 +110,14 @@ Arena uses **Switchboard VRF** (Verifiable Random Function) for provably fair ou
 
 Arena automatically protects players from unfair situations. When a no-contest is triggered, **all bets are fully refunded**.
 
-### One-Sided Timeout (5 Minutes)
+### One-Sided Timeout (2 Minutes)
 
-If only one side has bets and no opposing bets are placed within 5 minutes, the round is cancelled.
+If only one side has bets and no opposing bets are placed within 2 minutes, the round is cancelled.
 
 | | |
 |:--|:--|
 | **Why** | Prevents players from having funds locked indefinitely |
-| **Trigger** | 5 minutes pass with bets on only one side |
+| **Trigger** | 2 minutes pass with bets on only one side |
 | **Result** | All bets refunded in full |
 
 ### Lopsided Odds Protection (1.1x Threshold)
@@ -131,7 +145,13 @@ If either side's odds are at or below 1.1x when the battle timer expires, the ro
 
 ## Payout Calculation
 
-First, **1% of the losing pool** goes to the [Daily Jackpot](#daily-jackpot). Winners then split **90% of the remaining pool** proportionally based on their bet size.
+Fees are calculated from the **total pot** (Purple pool + Green pool):
+
+| Recipient | Share of Total Pot | Description |
+|:--|:--:|:--|
+| Winners | 85% | Distributed proportionally based on bet size |
+| Daily Jackpot | 1% | Contributed to the active 24-hour cycle |
+| Platform | 14% | Funds buyback & burn, operations, and referral rewards |
 
 ### Example
 
@@ -139,25 +159,27 @@ Round ends with:
 
 | | |
 |:--|:--|
-| **Purple Pool** | 10 SOL (3 bettors) |
-| **Green Pool** | 5 SOL (2 bettors) |
+| **Purple Pool** | 10 SOL |
+| **Green Pool** | 5 SOL |
+| **Total Pot** | 15 SOL |
 | **Winner** | Purple |
 
-Distribution of the losing pool (5 SOL):
+Distribution of the total pot:
 
 | Recipient | Calculation | Amount |
 |:--|:--|:--|
-| Daily Jackpot | 5 × 0.01 | 0.05 SOL |
-| Winners | 4.95 × 0.90 | 4.455 SOL |
-| REN Buyback | 4.95 × 0.08 | 0.396 SOL |
-| Platform | 4.95 × 0.02 | 0.099 SOL |
+| Winners | 15 × 0.85 | 12.75 SOL |
+| Daily Jackpot | 15 × 0.01 | 0.15 SOL |
+| Platform Share | 15 × 0.14 | 2.10 SOL |
 
-If you bet **4 SOL** on Purple (40% of Purple pool):
+If you bet **4 SOL** on Purple (40% of the Purple pool):
 
 | | |
 |:--|:--|
-| **Your share** | 4.455 × 0.40 = 1.782 SOL profit |
-| **You receive** | 4 + 1.782 = 5.782 SOL total |
+| **Your share** | 12.75 × 0.40 = 5.10 SOL |
+| **Net profit** | 5.10 − 4.00 = 1.10 SOL |
+
+The platform share covers operational costs, referral rewards, and the buyback & burn — see [Tokenomics](tokenomics.md) for the full breakdown.
 
 ---
 
@@ -210,7 +232,7 @@ Betting closes **10 seconds** before the round ends to:
 
 ### Fighter Gallery
 
-- View all 70+ fighters on the Gallery page
+- View the full active roster on the Gallery page
 - Each fighter displays their country of origin on a world map
 - Filter by active/inactive status
 - See win/loss records and last battle time
@@ -227,7 +249,8 @@ Arena delivers live updates throughout every round:
 | **Pool changes** | Watch odds shift in real-time |
 | **Round state** | Immediate notifications when rounds start/end |
 | **Chat messages** | Instant delivery of chat messages |
-| **Winner announcements** | Celebration animations when rounds settle |
+| **Win-streak banners** | Special chat banners when a wallet hits a win-streak milestone |
+| **Fight videos** | Cinematic post-round playback with winner overlay |
 | **Jackpot updates** | Live jackpot amount and winner notifications |
 
 ---
@@ -240,8 +263,8 @@ Every round contributes to a **24-hour jackpot prize pool**. At the end of each 
 
 | | |
 |:--|:--|
-| **Contribution** | 1% of each round's losing pool is transferred to the jackpot wallet |
-| **Cycle** | 24-hour cycles |
+| **Contribution** | 1% of each round's total pot is transferred to the jackpot wallet |
+| **Cycle** | 24-hour cycles (UTC) |
 | **Winner Selection** | Random participant drawn via Switchboard VRF |
 | **Payout** | Full jackpot balance sent directly to the winner's wallet |
 
@@ -259,6 +282,20 @@ Any wallet that places a bet during the active jackpot cycle is automatically en
 | **Verifiable Payout** | Winner payout transaction is publicly viewable on-chain |
 
 > The jackpot amount and countdown timer are displayed in the Arena header.
+
+---
+
+## Referral Rewards
+
+Players can earn a share of every bet placed by users they refer.
+
+| | |
+|:--|:--|
+| **Earn** | A percentage of each referred user's bet, every round they play |
+| **Payment** | Distributed automatically as part of round settlement |
+| **Source** | Paid from Arena's platform share — never out of winnings |
+
+> See [Referrals](referrals.md) for full details on sharing your link, tracking earnings, and how rewards are calculated.
 
 ---
 
@@ -300,6 +337,7 @@ Players can optionally create a profile to personalize their Arena experience.
 | **Avatar** | Choose from available avatars |
 | **Stats** | Total bets, win rate, total wagered, total won |
 | **Bet History** | View your latest bets with side, amount, and winnings |
+| **Referrals** | Personal referral code, link, and earnings |
 | **Win Streak** | Current consecutive wins displayed on leaderboards |
 
 > Profiles are optional. You can bet without creating one — your truncated wallet address will be shown instead.
@@ -313,8 +351,9 @@ During active rounds, players can chat:
 | | |
 |:--|:--|
 | **Character limit** | 200 characters |
-| **Moderation** | Basic filters in place |
+| **Moderation** | Keyword filters and slow-mode controls |
 | **Visibility** | All connected users |
+| **Win-Streak Banners** | Auto-generated when a wallet hits a streak milestone |
 | **Admin messages** | Display with special badges |
 
 ---

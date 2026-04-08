@@ -21,7 +21,7 @@
 
 ## Overview
 
-Arena is a Web3 betting platform where players wager SOL on head-to-head battles between two fighters—**Purple** and **Green**. Each round runs for 3 minutes, with winners determined by verifiable on-chain randomness powered by Switchboard VRF.
+Arena is a Web3 betting platform where players wager SOL on head-to-head battles between two fighters—**Purple** and **Green**. Each round runs for 90 seconds, with bets held in an on-chain Solana program vault and winners determined by verifiable randomness powered by Switchboard VRF.
 
 <div align="center">
   <br />
@@ -39,16 +39,24 @@ Arena is a Web3 betting platform where players wager SOL on head-to-head battles
     <td>Tamper-proof outcomes via Switchboard VRF with full on-chain verification</td>
   </tr>
   <tr>
+    <td><strong>On-Chain Vaults</strong></td>
+    <td>Bets held in trustless Solana program vaults until each round settles</td>
+  </tr>
+  <tr>
     <td><strong>Instant Settlement</strong></td>
-    <td>Winners automatically receive SOL directly to their wallet</td>
+    <td>Winners are paid directly from the vault to their wallet</td>
   </tr>
   <tr>
     <td><strong>Deflationary Mechanics</strong></td>
-    <td>8% of losing pools used for REN token buyback and burn</td>
+    <td>Half of every platform fee is used for token buyback and burn</td>
   </tr>
   <tr>
     <td><strong>Daily Jackpot</strong></td>
-    <td>1% of each round funds a 24-hour jackpot with VRF-drawn winner</td>
+    <td>1% of every round funds a 24-hour jackpot with a VRF-drawn winner</td>
+  </tr>
+  <tr>
+    <td><strong>Referral Rewards</strong></td>
+    <td>Earn a share of every bet placed by users you refer</td>
   </tr>
   <tr>
     <td><strong>Multi-Wallet Support</strong></td>
@@ -72,7 +80,7 @@ Arena is a Web3 betting platform where players wager SOL on head-to-head battles
 └─────────────┘      └─────────────┘      └─────────────┘      └─────────────┘
        │                    │                    │                    │
        ▼                    ▼                    ▼                    ▼
-  Awaiting bets        3-minute            VRF reveals          Auto-payouts
+  Awaiting bets        90-second           VRF reveals          Auto-payouts
   on both sides         battle               winner            + new round
 ```
 
@@ -86,21 +94,26 @@ Arena is a Web3 betting platform where players wager SOL on head-to-head battles
 |:--|:--|
 | **Network** | Solana Mainnet |
 | **Minimum Bet** | 0.01 SOL |
-| **Maximum Bet** | 10 SOL |
-| **Round Duration** | 3 minutes |
+| **Maximum Bet** | 10 SOL per wallet |
+| **Round Duration** | 90 seconds |
 | **Break Duration** | 30 seconds |
+| **Bet Custody** | On-chain vault PDA |
 
 ---
 
 ## Fee Structure
 
-When a round concludes, **1% of the losing pool** goes to the [Daily Jackpot](how-it-works.md#daily-jackpot). The remaining 99% is distributed:
+Fees are calculated from each round's **total pot** (Purple pool + Green pool):
 
 | Recipient | Allocation | Description |
 |:--|:--:|:--|
-| Winners | 90% | Proportional to bet size |
-| REN Buyback & Burn | 8% | Deflationary token mechanism |
-| Platform | 2% | Operational costs |
+| Winners | 85% | Proportional to bet size in the winning pool |
+| Daily Jackpot | 1% | Funds the 24-hour prize pool |
+| Platform | 14% | Operations, buyback & burn, and referral rewards |
+
+The 14% platform share is split evenly between **token buyback & burn** and **operations**, after referral rewards are paid out. Original bets are returned to winners on top of their share.
+
+> No-contest rounds (lopsided odds, no opponent) are fully refunded with **zero fees**.
 
 ---
 
@@ -120,7 +133,8 @@ When a round concludes, **1% of the losing pool** goes to the [Daily Jackpot](ho
 |:--|:--|
 | [Getting Started](getting-started.md) | Wallet setup and placing your first bet |
 | [Game Mechanics](how-it-works.md) | Round flow and battle system |
-| [Tokenomics](tokenomics.md) | Fee structure and REN burn mechanics |
+| [Tokenomics](tokenomics.md) | Fee structure and buyback & burn mechanics |
+| [Referrals](referrals.md) | How the referral program works |
 | [Provably Fair](provably-fair.md) | VRF verification and transparency |
 | [FAQ](faq.md) | Common questions |
 
@@ -128,10 +142,11 @@ When a round concludes, **1% of the losing pool** goes to the [Daily Jackpot](ho
 
 ## Security
 
-Arena implements enterprise-grade security measures:
+Arena implements multiple layers of security:
 
 | | |
 |:--|:--|
+| **On-Chain Vaults** | Bets held in trustless program vaults during each round |
 | **Switchboard VRF** | Cryptographically secure, verifiable randomness |
 | **On-Chain Verification** | All bets and payouts recorded on Solana |
 | **Signature Authentication** | Wallet-based identity verification |
