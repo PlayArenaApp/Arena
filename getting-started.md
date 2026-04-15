@@ -84,6 +84,19 @@ Your wallet address and SOL balance will appear in the header once connected.
 
 ---
 
+## Create a Profile
+
+A profile is required to place bets. Click your wallet address in the header to set one up:
+
+| | |
+|:--|:--|
+| **Display Name** | Show up on leaderboards and chat with a custom handle |
+| **Avatar** | Pick from available avatars |
+| **Bet History** | Track your wins, losses, and total wagered |
+| **Referrals** | Generate a referral code to earn from friends you invite |
+
+---
+
 ## Place Your First Bet
 
 1. **Choose your side** — Click on Purple or Green
@@ -129,24 +142,9 @@ Arena has automatic protections that may cancel a round:
 
 ---
 
-## Create a Profile (Optional)
-
-A profile unlocks a few extras:
-
-| | |
-|:--|:--|
-| **Display Name** | Show up on leaderboards and chat with a custom handle |
-| **Avatar** | Pick from available avatars |
-| **Bet History** | Track your wins, losses, and total wagered |
-| **Referrals** | Generate a referral code to earn from friends you invite |
-
-You can bet without a profile — your truncated wallet address will be displayed.
-
----
-
 ## Refer Friends
 
-Once you have a profile, share your referral link to earn a share of every bet your friends place.
+Share your referral link to earn a share of every bet your friends place.
 
 > See [Referrals](referrals.md) for full details.
 

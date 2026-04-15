@@ -334,7 +334,7 @@ Connect your wallet and click your wallet address in the header to access your p
 
 ### Do I need a profile to play?
 
-No. Profiles are optional. Without one, your truncated wallet address is shown on leaderboards and in chat.
+Yes. A profile is required to place bets. Connect your wallet and click your wallet address in the header to set up your display name and avatar.
 
 ### What stats does my profile track?
 

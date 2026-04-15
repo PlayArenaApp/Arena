@@ -327,7 +327,7 @@ Arena tracks player performance across multiple categories and time periods.
 
 ## Player Profiles
 
-Players can optionally create a profile to personalize their Arena experience.
+A profile is required to place bets on Arena. Profiles personalize your experience and unlock leaderboard visibility, referrals, and bet tracking.
 
 ### Profile Features
 
@@ -339,8 +339,6 @@ Players can optionally create a profile to personalize their Arena experience.
 | **Bet History** | View your latest bets with side, amount, and winnings |
 | **Referrals** | Personal referral code, link, and earnings |
 | **Win Streak** | Current consecutive wins displayed on leaderboards |
-
-> Profiles are optional. You can bet without creating one — your truncated wallet address will be shown instead.
 
 ---
 
