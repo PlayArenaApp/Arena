@@ -88,8 +88,8 @@ Your wallet address and SOL balance will appear in the header once connected.
 
 1. **Choose your side** — Click on Purple or Green
 2. **Enter amount** — Use the slider or input field (0.01–10 SOL)
-3. **Confirm** — Click the bet button and approve the transaction
-4. **Wait** — Your bet is locked for this round
+3. **Confirm** — Approve the on-chain transaction in your wallet
+4. **Wait** — Your bet is locked in the round's vault until settlement
 
 ---
 
@@ -98,9 +98,9 @@ Your wallet address and SOL balance will appear in the header once connected.
 | Phase | Duration | Details |
 |:--|:--|:--|
 | **Waiting** | — | Round starts when both sides have at least one bet |
-| **Active** | 3 minutes | Betting closes 10 seconds before round ends |
-| **Settlement** | Instant | Winner determined via VRF |
-| **Payout** | Automatic | Winnings sent directly to your wallet |
+| **Active** | 90 seconds | Betting closes 10 seconds before round ends |
+| **Break** | ~30 seconds | Winner determined via VRF, fight video plays |
+| **Payout** | Automatic | Winnings sent directly from the on-chain vault |
 
 You can add to your existing bet until betting closes (same side only).
 
@@ -122,10 +122,33 @@ Arena has automatic protections that may cancel a round:
 
 | Condition | Trigger | Result |
 |:--|:--|:--|
-| One-Sided Timeout | 5 min with bets on only one side | Full refund |
+| One-Sided Timeout | 2 min with bets on only one side | Full refund |
 | Lopsided Odds | Either side's odds drop to 1.1x or below | Full refund |
 
 > All bets are fully refunded with no fees.
+
+---
+
+## Create a Profile (Optional)
+
+A profile unlocks a few extras:
+
+| | |
+|:--|:--|
+| **Display Name** | Show up on leaderboards and chat with a custom handle |
+| **Avatar** | Pick from available avatars |
+| **Bet History** | Track your wins, losses, and total wagered |
+| **Referrals** | Generate a referral code to earn from friends you invite |
+
+You can bet without a profile — your truncated wallet address will be displayed.
+
+---
+
+## Refer Friends
+
+Once you have a profile, share your referral link to earn a share of every bet your friends place.
+
+> See [Referrals](referrals.md) for full details.
 
 ---
 
